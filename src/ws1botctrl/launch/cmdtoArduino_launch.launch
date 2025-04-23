@@ -1,0 +1,9 @@
+<launch>
+    <node
+        name="cmdto_arduino_node"
+        pkg="ws1botctrl"
+        type="cmdtoArduino.py"
+        output="screen"
+    />
+</launch>
+

@@ -1,0 +1,11 @@
+<launch>
+  <!-- Arguments for Serial Port and Baudrate -->
+  <arg name="port" default="/dev/ttyUSB1" />
+  <arg name="baud" default="57600" />
+
+  <!-- Node to run the combined Python script -->
+  <node pkg="ws1botctrl" type="combined_serial_node.py" name="combined_serial_node" output="screen">
+    <param name="port" value="$(arg port)" />
+    <param name="baud" value="$(arg baud)" />
+  </node>
+</launch>

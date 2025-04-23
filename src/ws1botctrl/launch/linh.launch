@@ -1,0 +1,12 @@
+<launch>
+    <!-- Launch rosserial_python -->
+    <include file="$(find rosserial_python)/launch/pythonserial.launch" />
+
+    <!-- Launch ws1botctrl -->
+    <include file="$(find ws1botctrl)/launch/cmdtoArduino_launch.launch" />
+
+    <!-- Launch ydlidar_ros_driver -->
+    <include file="$(find ydlidar_ros_driver)/launch/X2.launch" />
+
+<node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0 0 0 0 0 0 base_link laser_frame 100" />
+</launch>

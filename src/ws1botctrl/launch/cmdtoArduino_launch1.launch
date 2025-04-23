@@ -1,0 +1,12 @@
+<launch>
+    <!-- Set the serial port and baud rate as arguments -->
+    <arg name="port" default="/dev/ttyUSB0" />
+    <arg name="baud" default="57600" />
+
+    <!-- Launch the subcmdtoArduino Python node -->
+    <node name="subcmdtoArduino" pkg="ws1botctrl" type="subcmdtoArduino.py" output="screen">
+        <!-- Pass the port and baud rate as private parameters -->
+        <param name="port" value="$(arg port)" />
+        <param name="baud" value="$(arg baud)" />
+    </node>
+</launch>
